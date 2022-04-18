@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from . forms import SetlistForm
 
 # Create your views here.
-def create_setlist(request):
-    """ view to return index page """
-    return render(request, 'appone/create-setlist.html')
+def createSetlist(request):
+    form = SetlistForm()
+    context = {'form': form}
+    return render(request, 'appone/create-setlist.html', context)
