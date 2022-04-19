@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div>
+      <div>
+          {% for setlist in setlists %}
+            {{ setlist.id}} -- 
+            {% for song in setlist.song.all %}
+                {{ song }}
+            {% endfor %}
+          {% endfor %}
+      </div>
+  </div>
+{% endblock %}

@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create-setlist/', include('appone.urls')),
-    path('update-setlist/', include('appone.urls')),
+    path('', include('appone.urls')),
+    path('setlist/', include('appone.urls')),
 ]
