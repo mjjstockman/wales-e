@@ -21,4 +21,5 @@ urlpatterns = [
     path('create-setlist/', include('appone.urls')),
     path('', include('appone.urls')),
     path('setlist/', include('appone.urls')),
+    path('accounts/', include('allauth.urls')),
 ]

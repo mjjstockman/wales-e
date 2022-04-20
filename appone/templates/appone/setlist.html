@@ -7,9 +7,10 @@
           {% for setlist in setlists %}
             {{ setlist.id}} -- 
             {% for song in setlist.song.all %}
-                {{ song }}
+                {{ song }} author is {{ setlist.user.id }}
             {% endfor %}
           {% endfor %}
+          Logged in id is {{ user.id }}
       </div>
   </div>
 {% endblock %}
