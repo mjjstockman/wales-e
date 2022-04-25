@@ -4,13 +4,22 @@
 {% block content %}
   <div>
       <div>
-          {% for setlist in setlists %}
-            {{ setlist.id}} -- 
-            {% for song in setlist.song.all %}
-                {{ song }} author is {{ setlist.user.id }}
-            {% endfor %}
+          {% for setlist in setlists %} 
+            <p></p>setlist id is {{ setlist.id}}</p> 
+              {% for song in setlist.song.all %}
+                {{ song }}
+                <p>setlist user id is {{ user.id }}</p>
+                <!-- setlist user id is {{ setlist.user.id }} -->
+                {% if user.is.authenticated %}
+                  logged in
+                  <!-- {% if user.id == setlist.id %} -->
+                    <!-- <a href="{% url 'update-setlist' %}">Edit</a>
+                    <a href="{% url 'delete-setlist' %}">Delete</a> -->
+                  <!-- {% endif %} -->
+                {% endif %}
+              {% endfor %}
           {% endfor %}
-          Logged in id is {{ user.id }}
+          <!-- Logged in id is {{ user.id }} --> 
       </div>
   </div>
 {% endblock %}
